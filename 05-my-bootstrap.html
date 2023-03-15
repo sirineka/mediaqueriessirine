@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mobile-first</title>
+
+    <style>
+      /***mini reset***/
+      /****colonne mobile d'abord***/
+      [class*="col"] {
+        width: 100%;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      .img-fluid {
+        width: 100%;
+        height: auto;
+      }
+      .d-none {
+        display: none;
+      }
+
+      .row::after {
+        content: "";
+        clear: both;
+        display: block;
+      }
+      [class*="col"] {
+        padding: 15px;
+      }
+
+      /* Pour les fenêtres dont la largeur est supérieure à 768px
+        ET inférieure à 991px
+        Les colonnes sont définies */
+      @media only screen and (min-width: 768px) and (max-width: 991px) {
+        /* Pour la Tablette */
+        [class*="col-"] {
+          /* ancienne méthode simple
+            mais dépréciée aujourd'hui
+            profit de flex ... ;) */
+          float: left;
+        }
+
+        .col-md-12 {
+          width: 100%;
+        }
+        .col-md-9 {
+          width: 75%;
+        }
+        .col-md-6 {
+          width: 50%;
+        }
+        .col-md-3 {
+          width: 25%;
+        }
+        .d-md-block {
+          display: block;
+        }
+      }
+
+      /* Pour les fenêtres dont la largeur est supérieure à 992px
+        Les colonnes sont définies */
+      @media only screen and (min-width: 992px) {
+        /* Pour le Desktop */
+        [class*="col-"] {
+          /* ancienne méthode simple
+            mais dépréciée aujourd'hui
+            profit de flex ... ;) */
+          float: left;
+        }
+        .col-lg-12 {
+          width: 100%;
+        }
+        .col-lg-9 {
+          width: 75%;
+        }
+        .col-lg-6 {
+          width: 50%;
+        }
+        .col-lg-3 {
+          width: 25%;
+        }
+        .d-lg-block {
+          display: block;
+        }
+      }
+      html {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+      header,
+      footer {
+        background-color: rgb(153, 47, 153);
+        color: white;
+        padding: 15px;
+      }
+      nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      nav ul li {
+        background-color: rgb(241, 178, 157);
+        color: white;
+        padding: 10px;
+        margin-bottom: 10px;
+        box-shadow: 0 1px 3px #cccccc, 0 1px 2px black;
+      }
+      nav ul li:hover {
+        background-color: #f7bcbc;
+        cursor: pointer;
+      }
+      .right {
+        background-color: rgb(241, 178, 157);
+        color: white;
+      }
+      .right ul {
+        list-style: none;
+      }
+      .right ul li {
+        margin-bottom: 10px;
+        padding: 10px;
+      }
+      .ads {
+        background-color: red;
+        padding: 15px;
+        color: white;
+      }
+      .hero {
+        width: 100%;
+        height: 200px;
+        background-image: url(https://www.amplitudes.com/blog/wp-content/uploads/2017/04/PANO.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Header</h1>
+    </header>
+    <section class="hero"></section>
+    <section class="row">
+      <nav>
+        <ul class="col col-md-6 col-lg-3">
+          <li>Home</li>
+          <li>About</li>
+          <li>Gallery</li>
+          <li>Contact</li>
+        </ul>
+      </nav>
+
+      <div class="col col-md-6 col-lg-6">
+        <h2>Home of the responsive web design</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo amet
+          fuga pariatur? Facilis voluptatibus error voluptas, odio non mollitia
+          repellendus, quisquam suscipit vel adipisci cumque. Pariatur illo
+          incidunt quidem aliquam? Lorem ipsum dolor sit amet consectetur,
+          adipisicing elit. Illo amet fuga pariatur? Facilis voluptatibus error
+          voluptas, odio non mollitia repellendus, quisquam suscipit vel
+          adipisci cumque. Pariatur illo incidunt quidem aliquam?Lorem ipsum
+          dolor sit amet consectetur, adipisicing elit. Illo amet fuga pariatur?
+          Facilis voluptatibus error voluptas, odio non mollitia repellendus,
+          quisquam suscipit vel adipisci cumque. Pariatur illo incidunt quidem
+          aliquam?Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo
+          amet fuga pariatur? Facilis voluptatibus error voluptas, odio non
+          mollitia repellendus, quisquam suscipit vel adipisci cumque. Pariatur
+          illo incidunt quidem aliquam?
+        </p>
+        <img
+          class="img-fluid"
+          src="https://www.computersciencedegreehub.com/wp-content/uploads/2023/02/shutterstock_535124956-scaled.jpg"
+          alt="coding"
+        />
+      </div>
+
+      <div class="col col-md-12 col-lg-3 right">
+        <h3>Side Menu</h3>
+        <ul>
+          <li>What ?</li>
+          <li>Where ?</li>
+          <li>Who ?</li>
+          <li>How ?</li>
+        </ul>
+      </div>
+    </section>
+    <section>
+      <picture>
+        <source
+          srcset="
+            https://www.amplitudes.com/blog/wp-content/uploads/2017/04/PANO.jpg
+          "
+          media="(max-width: 768px)"
+        />
+        <source
+          srcset="
+            https://www.photo-paysage.com/albums/Paysages/Lac-riviere-cascade/thumb_croatie-lacs-plitvice-cascades-7.jpg
+          "
+          media="(min-width: 992px)"
+        />
+        <img
+          src="https://www.computersciencedegreehub.com/wp-content/uploads/2023/02/shutterstock_535124956-scaled.jpg"
+          alt="coding"
+        />
+      </picture>
+    </section>
+    <section class="ads d-none d-md-block d-lg-block">ICI LA PUB</section>
+
+    <footer>
+      <h3>footer</h3>
+    </footer>
+  </body>
+</html>

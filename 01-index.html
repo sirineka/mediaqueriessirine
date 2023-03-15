@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Media query</title>
+    <style>
+      /*** par défaut la couleur d'arrière plan****/
+      body {
+        background-color: coral;
+      }
+      /*****si le navigateur est à 992px ou plus petit la couleur d'arrière plan va changer***/
+      @media screen and (max-width: 992px) {
+        body {
+          background-color: rgb(136, 136, 187);
+        }
+      }
+      /*****si le navigateur est à 600px ou plus petit la couleur d'arrière plan va changer***/
+      @media screen and (max-width: 600px) {
+        body {
+          background-color: blue;
+        }
+      }
+    </style>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mobile-first</title>
+
+    <style>
+      /****le mobile est la***/
+      [class*="col-"] {
+        width: 100%;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+      header,
+      footer {
+        background-color: rgb(153, 47, 153);
+        color: white;
+        padding: 15px;
+      }
+      nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      nav ul li {
+        background-color: rgb(241, 178, 157);
+        color: white;
+        padding: 10px;
+        margin-bottom: 10px;
+        box-shadow: 0 1px 3px #cccccc, 0 1px 2px black;
+      }
+      nav ul li:hover {
+        background-color: #f7bcbc;
+        cursor: pointer;
+      }
+      .right {
+        background-color: rgb(241, 178, 157);
+        color: white;
+      }
+      .right ul {
+        list-style: none;
+      }
+      .right ul li {
+        margin-bottom: 10px;
+        padding: 10px;
+      }
+      .row::after {
+        content: "";
+        clear: both;
+        display: block;
+      }
+      [class*="col-"] {
+        padding: 15px;
+      }
+
+      /**** pour les fenêtre dont la largeur est supérieure à 768px toutes les colonnes sont définies****/
+      @media only screen and (min-width: 768px) {
+        /*****pour les desktop***/
+        [class*="col-"] {
+          float: left; /***pour les vieux de la vieille***/
+        }
+        .col-12 {
+          width: 100%;
+        }
+        .col-9 {
+          width: 75%;
+        }
+        .col-6 {
+          width: 50%;
+        }
+        .col-3 {
+          width: 25%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Header</h1>
+    </header>
+    <section class="row">
+      <nav>
+        <ul class="col-3">
+          <li>Home</li>
+          <li>About</li>
+          <li>Gallery</li>
+          <li>Contact</li>
+        </ul>
+      </nav>
+
+      <div class="col-6">
+        <h2>Home of the responsive web design</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo amet
+          fuga pariatur? Facilis voluptatibus error voluptas, odio non mollitia
+          repellendus, quisquam suscipit vel adipisci cumque. Pariatur illo
+          incidunt quidem aliquam? Lorem ipsum dolor sit amet consectetur,
+          adipisicing elit. Illo amet fuga pariatur? Facilis voluptatibus error
+          voluptas, odio non mollitia repellendus, quisquam suscipit vel
+          adipisci cumque. Pariatur illo incidunt quidem aliquam?Lorem ipsum
+          dolor sit amet consectetur, adipisicing elit. Illo amet fuga pariatur?
+          Facilis voluptatibus error voluptas, odio non mollitia repellendus,
+          quisquam suscipit vel adipisci cumque. Pariatur illo incidunt quidem
+          aliquam?Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo
+          amet fuga pariatur? Facilis voluptatibus error voluptas, odio non
+          mollitia repellendus, quisquam suscipit vel adipisci cumque. Pariatur
+          illo incidunt quidem aliquam?
+        </p>
+      </div>
+
+      <div class="col-3 right">
+        <h3>Side Menu</h3>
+        <ul>
+          <li>What ?</li>
+          <li>Where ?</li>
+          <li>Who ?</li>
+          <li>How ?</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      <h3>footer</h3>
+    </footer>
+  </body>
+</html>
